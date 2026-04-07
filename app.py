@@ -326,7 +326,7 @@ def model_info():
         return jsonify({
             'error': 'Failed to get model information'
         }), 500
-<<<<<<< HEAD
+ 
 from flask import Flask
 
 app = Flask(__name__)
