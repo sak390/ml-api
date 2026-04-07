@@ -327,7 +327,7 @@ def model_info():
             'error': 'Failed to get model information'
         }), 500
  
-from flask import Flask
+
 
 app = Flask(__name__)
 
