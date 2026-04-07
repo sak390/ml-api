@@ -326,6 +326,7 @@ def model_info():
         return jsonify({
             'error': 'Failed to get model information'
         }), 500
+<<<<<<< HEAD
 from flask import Flask
 
 app = Flask(__name__)
@@ -338,3 +339,5 @@ if not load_model_components():
 @app.route('/')
 def home():
     return "ML API is running"
+=======
+>>>>>>> ab2b34c (fix app)
