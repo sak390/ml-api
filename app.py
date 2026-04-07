@@ -331,7 +331,7 @@ if __name__ == '__main__':
     # Load model components
     if load_model_components():
         logger.info("Starting ML API server...")
-        port = int(os.environ.get.('PORT', 8000))
+        port = int(os.environ.get('PORT', 8000))
         app.run(host='0.0.0.0', port=port)
     else:
         logger.error("Failed to load model components. Please train the model first.")
