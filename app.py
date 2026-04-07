@@ -326,13 +326,15 @@ def model_info():
         return jsonify({
             'error': 'Failed to get model information'
         }), 500
-import os
-if __name__ == '__main__':
-    # Load model components
-    if load_model_components():
-        logger.info("Starting ML API server...")
-        port = int(os.environ.get("PORT", 8080))
-app.run(host="0.0.0.0", port=port)
-    else:
-        logger.error("Failed to load model components. Please train the model first.")
-        print("Please run 'python train_model.py' first to train and save the model.")
+from flask import Flask
+
+app = Flask(__name__)
+
+# Load model once
+if not load_model_components():
+    print("Model failed to load")
+
+# your routes here
+@app.route('/')
+def home():
+    return "ML API is running"
